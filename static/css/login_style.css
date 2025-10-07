@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --bg-dark: #0a0a1e;
+    --bg-card: #1a1a3a;
+    --neon-cyan: #00ffff;
+    --neon-magenta: #ff00ff;
+    --text-light: #e0e0e0;
+    --text-muted: #8c96c4;
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Poppins', sans-serif;
+    --glow-cyan: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-container {
+    background-color: var(--bg-card);
+    padding: 40px 35px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px; /* Reduced width */
+    border: 1px solid var(--neon-cyan);
+    box-shadow: var(--glow-cyan);
+    transition: height 0.3s ease-in-out;
+}
+
+h2 {
+    font-family: var(--font-primary);
+    color: var(--neon-cyan);
+    text-shadow: var(--glow-cyan);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--neon-magenta);
+    border-radius: 6px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: var(--glow-cyan);
+}
+
+/* Hide username group in login mode */
+.auth-container.login-mode #username-group {
+    display: none;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--neon-cyan);
+    color: var(--bg-dark);
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-shadow: var(--glow-cyan);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #33ffff;
+    box-shadow: var(--glow-cyan);
+}
+
+.toggle-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.toggle-link a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.toggle-link a:hover {
+    text-decoration: underline;
+}

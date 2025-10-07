@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Access</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_style.css') }}">
+</head>
+<body>
+    <div class="auth-container" id="auth-container">
+        <h2 id="form-title">Create Account</h2>
+        <form id="auth-form" onsubmit="return false;">
+            
+            <div class="input-group" id="username-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="input-group" id="email-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-button">Register</button>
+        </form>
+        <div class="toggle-link">
+            <span id="toggle-text">Existing user?</span>
+            <a href="#" id="toggle-action">Login</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

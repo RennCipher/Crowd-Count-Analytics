@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <i class='bx bxs-dashboard'></i>
+                <span>Dashboard</span>
+            </div>
+            <div class="menu" id="mainMenu">
+                <button id="btn-camera"><i class='bx bx-camera'></i> Camera</button>
+                <button id="btn-video-feed" class="active"><i class='bx bx-video-plus'></i> Video Feed</button>
+                
+                <div class="zone-menu-container">
+                    <button id="btn-zone-manipulation" class="has-submenu">
+                        <i class='bx bx-vector'></i> Zone Manipulation <i class='bx bx-chevron-down toggle-arrow'></i>
+                    </button>
+                    <div class="submenu" id="zone-submenu">
+                        <button id="btn-zone-create"><i class='bx bx-edit-alt'></i> Create</button>
+                        <button id="btn-zone-preview"><i class='bx bx-show'></i> Preview</button>
+                        <div id="zone-delete-section">
+                            <label>Delete Zone:</label>
+                            <div class="delete-wrapper">
+                                <select id="zone-list-delete"></select>
+                                <button id="btn-zone-delete" class="btn-danger"><i class='bx bx-trash'></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn-live-analysis"><i class='bx bx-line-chart'></i> Live Analysis</button>
+            </div>
+
+            <div class="bottom">
+                <div class="user-profile">
+                    <i class='bx bxs-user-circle'></i>
+                    <span id="usernameDisplay">User</span>
+                </div>
+                <button class="logout" id="btn-logout"><i class='bx bx-log-out-circle'></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="view-content" id="video-feed-view">
+                <div class="video-placeholder" id="video-placeholder">
+                    <i class='bx bx-upload'></i>
+                    <p>Click to upload a video for analysis</p>
+                    <input id="videoUploadInput" type="file" accept="video/*" style="display: none;">
+                 </div>
+                <div class="video-wrapper" id="videoWrapper">
+                    <video id="videoFeed" playsinline autoplay muted loop></video>
+                    <canvas id="zoneCanvas"></canvas>
+                </div>
+                <div class="small-note" id="canvas-note"></div>
+            </div>
+
+            <div class="view-content" id="live-analysis-view">
+                <div class="analysis-grid">
+                    <div class="card chart-panel">
+                        <div class="card-header">
+                            <h2>Real-time Population Analytics</h2>
+                            <div id="alert-box" class="alert-box alert-info">
+                                <i class='bx bxs-info-circle'></i> System is nominal.
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                             <canvas id="population-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="right-panel">
+                        <div class="card stats-card">
+                            <div class="stat-item">
+                                <h4>Total People</h4>
+                                <p id="total-people-text">0</p>
+                            </div>
+                           <div class="stat-item">
+                                <h4>Analysis Status</h4>
+                                <p id="status-text">Idle</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3><i class='bx bx-video'></i> Live Feed & Detections</h3>
+                            <div class="media-container">
+                                <img id="analysisOverlayFrame" />
+                            </div>
+                        </div>
+                        <div class="card">
+                             <h3><i class='bx bxs-hot'></i> Activity Heatmap</h3>
+                             <div class="media-container">
+                                <img id="analysisHeatmapFrame" />
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h3><i class='bx bx-buildings'></i> Zone Occupancy</h3>
+                            <ul id="zone-occupancy-list">
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="zone-name-modal" class="modal-overlay">
+                <div class="modal-content">
+                    <h3>Enter Zone Name</h3>
+                    <input type="text" id="zone-name-input" placeholder="e.g., Main Entrance">
+                    <div class="modal-actions">
+                        <button id="modal-cancel-btn" class="btn-alt">Cancel</button>
+                        <button id="modal-save-btn">Save Zone</button>
+                    </div>
+                </div>
+            </div>
+            <div id="notification-container"></div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

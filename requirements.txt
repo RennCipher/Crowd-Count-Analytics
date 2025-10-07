@@ -1,0 +1,9 @@
+flask
+flask_cors
+werkzeug
+flask_jwt_extended
+opencv-python
+ultralytics
+deep-sort-realtime
+numpy
+Flask-Bcrypt

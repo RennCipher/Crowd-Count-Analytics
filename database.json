@@ -1,0 +1,67 @@
+{
+    "users": {
+        "398c29e7-b0e8-45d1-af24-d117b4f9bd73": {
+            "username": "Renila",
+            "email": "ren@gmail.com",
+            "password": "$2b$12$9HmsHDw8CANAZRN0Pm8fHuTCp5jSLOSwcbC/BRJvsc0HyeU84PHcS"
+        },
+        "63e284e9-471d-4a82-91ce-c9678244e4b8": {
+            "username": "Ren",
+            "email": "r@gmail.com",
+            "password": "$2b$12$k9InEbWvODjLwVprQKAv2OG2CwTpWCWJyMErzORoP9mXQHQeaS6S."
+        },
+        "01c06fb9-f114-41db-b38a-91d25a732e60": {
+            "username": "Renila",
+            "email": "renila@gmail.com",
+            "password": "$2b$12$uJoaSNXg/PsamOHpuFxR3.46UdbTl6Xj9NL4KZVR82cjAfo6Ywr8C"
+        }
+    },
+    "zones": {
+        "398c29e7-b0e8-45d1-af24-d117b4f9bd73": [
+            {
+                "id": "df2b1708-84db-4110-be59-699d918fe979",
+                "name": "Pathway",
+                "coordinates": [
+                    {
+                        "x": 48,
+                        "y": 332
+                    },
+                    {
+                        "x": 587,
+                        "y": 332
+                    },
+                    {
+                        "x": 587,
+                        "y": 995
+                    },
+                    {
+                        "x": 48,
+                        "y": 995
+                    }
+                ]
+            },
+            {
+                "id": "c76f8588-4370-4f4d-985a-99239f728756",
+                "name": "Shop areas",
+                "coordinates": [
+                    {
+                        "x": 514,
+                        "y": 247
+                    },
+                    {
+                        "x": 995,
+                        "y": 247
+                    },
+                    {
+                        "x": 995,
+                        "y": 965
+                    },
+                    {
+                        "x": 514,
+                        "y": 965
+                    }
+                ]
+            }
+        ]
+    }
+}
